@@ -1,25 +1,26 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
 Object.defineProperty(exports, "__esModule", { value: true });
-const env_1 = __importDefault(require("./env"));
-const db = {
-    usernamen: env_1.default.DB_NAME,
-    password: env_1.default.DB_PASS,
-    database: env_1.default.DB_NAME,
-    host: env_1.default.DB_HOST,
-    dialect: env_1.default.DB_DIALECT
-};
-if (process.env.NODE_ENV === "production") {
-    Object.assign(db, {
+const env_1 = require("./env");
+module.exports = {
+    development: {
+        username: env_1.ENV.DB_USER,
+        password: env_1.ENV.DB_PASS,
+        database: env_1.ENV.DB_NAME,
+        host: env_1.ENV.DB_HOST,
+        dialect: env_1.ENV.DB_DIALECT,
         dialectOptions: {
-            ssl: {
-                require: true,
-                rejectUnauthorized: false,
-            },
-        },
-    });
-}
-;
-exports.default = db;
+            bigNumberStrings: true
+        }
+    },
+};
+// //if (process.env.NODE_ENV === "production"){
+//   Object.assign(db, {
+//     dialectOptions: {
+//       ssl: {
+//         require: true,
+//         rejectUnauthorized: false,
+//       },
+//     },
+//   });
+// };
+//module.exports = db;

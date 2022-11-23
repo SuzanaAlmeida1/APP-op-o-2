@@ -1,6 +1,7 @@
-import "dotenv/config";
+import dotenv from 'dotenv'
+dotenv.config()
 
-const ENV = {
+export const ENV = {
   DB_NAME: process.env.DB_NAME as string,
   DB_HOST: process.env.DB_HOST as string,
   DB_PORT: Number(process.env.DB_PORT),
@@ -9,4 +10,4 @@ const ENV = {
   DB_DIALECT: process.env.DB_DIALECT as string
 };
 
-export default ENV;
+//export ENV;

@@ -1,7 +1,7 @@
 
 
 import { Dialect } from "Sequelize";
-import ENV from "../infra/config/env";
+import {ENV} from "../infra/config/env";
 import Conection from "./Conection";
 
 
