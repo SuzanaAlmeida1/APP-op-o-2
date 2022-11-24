@@ -23,3 +23,4 @@ if (process.env.NODE_ENV === "production") {
 }
 const mySqlConection = new Conection_1.default(env_1.ENV.DB_NAME, env_1.ENV.DB_USER, env_1.ENV.DB_PASS, dbConfig);
 exports.mySqlConection = mySqlConection;
+console.log(mySqlConection.hasConection());

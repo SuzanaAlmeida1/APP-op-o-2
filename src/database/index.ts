@@ -29,3 +29,4 @@ const mySqlConection = new Conection(
 );
 
 export { mySqlConection };
+console.log(mySqlConection.hasConection());
